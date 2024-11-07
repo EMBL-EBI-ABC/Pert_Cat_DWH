@@ -274,9 +274,9 @@
                         "mode": "NULLABLE"
                     },
                     {
-                        "name": "model_system_organism",
+                        "name": "model_system_species",
                         "type": "STRING",
-                        "description": "The organism of the model system: Human, Mouse, etc.",
+                        "description": "The species of the model system: Human, Mouse, etc.",
                         "mode": "NULLABLE"
                     },
                     {
