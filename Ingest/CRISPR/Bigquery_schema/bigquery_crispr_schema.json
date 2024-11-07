@@ -238,6 +238,31 @@
                 "mode": "NULLABLE"
             },
             {
+                "name": "target_name",
+                "type": "STRING",
+                "description": "An array of perturbed common gene symbol (e.g., TP53)",
+                "mode": "REPEATED"
+                    
+            },
+            {
+                "name": "target_ensembl_id",
+                "type": "STRING",
+                "description": "An array of perturbed ensembl gene identifier (e.g., ENSG00000141510)",
+                "mode": "REPEATED"
+            },
+            {
+                "name": "target_refseq_id",
+                "type": "STRING",
+                "description": "An array of perturbed RefSeq gene identifier (e.g., NG_017013.2)",
+                "mode": "REPEATED"
+            },
+            {
+                "name": "target_uniprot_id",
+                "type": "STRING",
+                "description": "An array of perturbed UniProt protein identifier (e.g., P04637)",
+                "mode": "REPEATED"
+            },
+            {
                 "name": "readout_dimensionality",
                 "type": "STRING",
                 "description": "The readout complexity: single-dimensional, higher-dimensional.",

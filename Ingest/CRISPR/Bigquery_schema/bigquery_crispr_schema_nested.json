@@ -184,6 +184,38 @@
                 "mode": "NULLABLE"
             },
             {
+                "name": "perturbed_genes",
+                "type": "RECORD",
+                "description": "Details of all genes targeted/perturbed in the experiment",
+                "mode": "REPEATED",
+                "fields": [
+                    {
+                        "name": "target_name",
+                        "type": "STRING",
+                        "description": "Common gene symbol (e.g., TP53)",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "target_ensembl_id",
+                        "type": "STRING",
+                        "description": "Ensembl gene identifier (e.g., ENSG00000141510)",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "target_refseq_id",
+                        "type": "STRING",
+                        "description": "RefSeq gene identifier (e.g., NG_017013.2)",
+                        "mode": "NULLABLE"
+                    },
+                    {
+                        "name": "target_uniprot_id",
+                        "type": "STRING",
+                        "description": "UniProt protein identifier (e.g., P04637)",
+                        "mode": "NULLABLE"
+                    }
+                ]
+            },
+            {
                 "name": "model_system_details",
                 "type": "RECORD",
                 "description": "Details of the model system used in the perturbation",
