@@ -76,81 +76,15 @@
                 "mode": "NULLABLE"
             },
             {
-                "name": "mechanism",
-                "type": "STRING",
-                "description": "The mechanism of the perturbation: CRISPR knockout, CRISPR activation, etc.",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "screen_scope",
-                "type": "STRING",
-                "description": "The scope of the screen: genome-wide, focused, custom, etc.",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "screen_format",
-                "type": "STRING",
-                "description": "The format of the screen: pooled, arrayed",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "enzyme",
-                "type": "STRING",
-                "description": "The enzyme used in the CRISPR perturbation: Cas9, Cas12a, etc.",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "library",
-                "type": "STRING",
-                "description": "The name of the CRISPR library used in the experiment: Brunello, GeCKO, etc.",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "enzyme_delivery_method",
-                "type": "STRING",
-                "description": "The method used to deliver the enzyme for the CRISPR perturbation: lentivirus, electroporation, etc.",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "library_delivery_method",
-                "type": "STRING",
-                "description": "The method used to deliver the enzyme for the CRISPR perturbation: lentivirus, electroporation, etc.",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "enzyme_integration_state",
-                "type": "STRING",
-                "description": "The final genomic state of the enzyme: extra-local insertion, random integration, episomal, non-integrated plasmid, RNA",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "library_integration_state",
-                "type": "STRING",
-                "description": "The final genomic state of the sgRNA: extra-local insertion, random integration, episomal, non-integrated plasmid, RNA",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "enzyme_expression_control",
-                "type": "STRING",
-                "description": "Expression control mechanism of the enzyme: constitutive, inducible, native promoter",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "library_expression_control",
-                "type": "STRING",
-                "description": "Expression control mechanism of the sgRNA: constitutive, inducible, native promoter",
+                "name": "num_perturbed_cells",
+                "type": "INTEGER",
+                "description": "The number of cells perturbed in the experiment: 15000, 50000, etc.",
                 "mode": "NULLABLE"
             },
             {
                 "name": "num_perturbed_genes",
                 "type": "INTEGER",
                 "description": "The number of genes perturbed in the experiment: 1, 10, 100, etc.",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "num_perturbed_cells",
-                "type": "INTEGER",
-                "description": "The number of cells perturbed in the experiment: 15000, 50000, etc.",
                 "mode": "NULLABLE"
             },
             {
@@ -184,7 +118,89 @@
                 "mode": "NULLABLE"
             },
             {
-                "name": "perturbed_genes",
+                "name": "screen_scope",
+                "type": "STRING",
+                "description": "The scope of the screen: genome-wide, focused, custom, etc.",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "screen_format",
+                "type": "STRING",
+                "description": "The format of the screen: pooled, arrayed",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "perturbation_details",
+                "type": "RECORD",
+                "description": "Details of the perturbation",
+                "mode": "NULLABLE",
+                "fields": [
+                    {
+                        "name": "endogenous_perturbation",
+                        "type": "RECORD",
+                        "description": "Endogenous perturbation details",
+                        "mode": "NULLABLE",
+                        "fields": [
+                            {
+                                "name": "library_generation_method",
+                                "type": "STRING",
+                                "description": "The enzyme used in the CRISPR perturbation: Cas9, Cas12a, etc.",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "mechanism",
+                                "type": "STRING",
+                                "description": "The mechanism of the perturbation: CRISPR knockout, CRISPR activation, etc.",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "library",
+                                "type": "STRING",
+                                "description": "The name of the CRISPR library used in the experiment: Brunello, GeCKO, etc.",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "enzyme_delivery_method",
+                                "type": "STRING",
+                                "description": "The method used to deliver the enzyme for the CRISPR perturbation: lentivirus, electroporation, etc.",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "library_delivery_method",
+                                "type": "STRING",
+                                "description": "The method used to deliver the enzyme for the CRISPR perturbation: lentivirus, electroporation, etc.",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "enzyme_integration_state",
+                                "type": "STRING",
+                                "description": "The final genomic state of the enzyme: extra-local insertion, random integration, episomal, non-integrated plasmid, RNA",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "library_integration_state",
+                                "type": "STRING",
+                                "description": "The final genomic state of the sgRNA: extra-local insertion, random integration, episomal, non-integrated plasmid, RNA",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "enzyme_expression_control",
+                                "type": "STRING",
+                                "description": "Expression control mechanism of the enzyme: constitutive, inducible, native promoter",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "library_expression_control",
+                                "type": "STRING",
+                                "description": "Expression control mechanism of the sgRNA: constitutive, inducible, native promoter",
+                                "mode": "NULLABLE"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "target_details",
                 "type": "RECORD",
                 "description": "Details of all genes targeted/perturbed in the experiment",
                 "mode": "REPEATED",

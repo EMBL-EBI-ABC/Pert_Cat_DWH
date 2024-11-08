@@ -112,6 +112,108 @@
                 "mode": "NULLABLE"
             },
             {
+                "name": "library_generation_type",
+                "type": "STRING",
+                "description": "The type of perturbation method: endogenous, exogenous",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "perturbation_details",
+                "type": "RECORD",
+                "description": "Details of the perturbation",
+                "mode": "NULLABLE",
+                "fields":[
+                    {
+                        "name": "endogenous_perturbation",
+                        "type": "RECORD",
+                        "description": "Endogenous perturbation details",
+                        "mode": "NULLABLE",
+                        "fields": [
+                            {
+                                "name": "library_generation_method",
+                                "type": "STRING",
+                                "description": "Enzyme used for the perturbation: Cas9, Cas12a, etc.",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "mechanism",
+                                "type": "STRING",
+                                "description": "The mechanism of the perturbation: nuclease, base editor, prime editor.",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "enzyme_delivery_method",
+                                "type": "STRING",
+                                "description": "The method used to deliver the enzyme for the perturbation: lentivirus, electroporation, etc.",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "library_delivery_method",
+                                "type": "STRING",
+                                "description": "The method used to deliver the library for the perturbation: lentivirus, electroporation, etc.",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "enzyme_integration_state",
+                                "type": "STRING",
+                                "description": "The final genomic state of the enzyme: native locus replacement, extra-local insertion, random integration, episomal, non-integrated plasmid, RNA",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "library_integration_state",
+                                "type": "STRING",
+                                "description": "The final genomic state of the sgRNA library: native locus replacement, extra-local insertion, random integration, episomal, non-integrated plasmid, RNA",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "enzyme_expression_control",
+                                "type": "STRING",
+                                "description": "Expression control mechanism of the enzyme: constitutive, inducible, native promoter",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "library_expression_control",
+                                "type": "STRING",
+                                "description": "Expression control mechanism of the sgRNA library: constitutive, inducible, native promoter",
+                                "mode": "NULLABLE"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "exogenous_perturbation",
+                        "type": "RECORD",
+                        "description": "Exogenous perturbation details",
+                        "mode": "NULLABLE",
+                        "fields": [
+                            {
+                                "name": "library_generation_method",
+                                "type": "STRING",
+                                "description": "Method for exogenous library generation: oligo-directed mutagenic PCR, error-prone PCR.",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "library_delivery_method",
+                                "type": "STRING",
+                                "description": "The method used to deliver the library for the perturbation: lentivirus, electroporation, etc.",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "library_integration_state",
+                                "type": "STRING",
+                                "description": "The final genomic state of the library: native locus replacement, extra-local insertion, random integration, episomal, non-integrated plasmid, RNA",
+                                "mode": "NULLABLE"
+                            },
+                            {
+                                "name": "library_expression_control",
+                                "type": "STRING",
+                                "description": "Expression control mechanism: constitutive, inducible, native promoter",
+                                "mode": "NULLABLE"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
                 "name": "target_details",
                 "type": "RECORD",
                 "description": "Details of the target of the perturbation",
@@ -163,100 +265,6 @@
                         "name": "target_sequence_rna",
                         "type": "STRING",
                         "description": "Target RNA sequence",
-                        "mode": "NULLABLE"
-                    }
-                ]
-            },
-            {
-                "name": "library_generation_type",
-                "type": "STRING",
-                "description": "The type of perturbation method: endogenous, exogenous",
-                "mode": "NULLABLE"
-            },
-            {
-                "name": "endogenous_perturbation",
-                "type": "RECORD",
-                "description": "Endogenous perturbation details",
-                "mode": "NULLABLE",
-                "fields": [
-                    {
-                        "name": "library_generation_method",
-                        "type": "STRING",
-                        "description": "Enzyme used for the perturbation: Cas9, Cas12a, etc.",
-                        "mode": "NULLABLE"
-                    },
-                    {
-                        "name": "mechanism",
-                        "type": "STRING",
-                        "description": "The mechanism of the perturbation: nuclease, base editor, prime editor.",
-                        "mode": "NULLABLE"
-                    },
-                    {
-                        "name": "enzyme_delivery_method",
-                        "type": "STRING",
-                        "description": "The method used to deliver the enzyme for the perturbation: lentivirus, electroporation, etc.",
-                        "mode": "NULLABLE"
-                    },
-                    {
-                        "name": "library_delivery_method",
-                        "type": "STRING",
-                        "description": "The method used to deliver the library for the perturbation: lentivirus, electroporation, etc.",
-                        "mode": "NULLABLE"
-                    },
-                    {
-                        "name": "enzyme_integration_state",
-                        "type": "STRING",
-                        "description": "The final genomic state of the enzyme: native locus replacement, extra-local insertion, random integration, episomal, non-integrated plasmid, RNA",
-                        "mode": "NULLABLE"
-                    },
-                    {
-                        "name": "library_integration_state",
-                        "type": "STRING",
-                        "description": "The final genomic state of the sgRNA library: native locus replacement, extra-local insertion, random integration, episomal, non-integrated plasmid, RNA",
-                        "mode": "NULLABLE"
-                    },
-                    {
-                        "name": "enzyme_expression_control",
-                        "type": "STRING",
-                        "description": "Expression control mechanism of the enzyme: constitutive, inducible, native promoter",
-                        "mode": "NULLABLE"
-                    },
-                    {
-                        "name": "library_expression_control",
-                        "type": "STRING",
-                        "description": "Expression control mechanism of the sgRNA library: constitutive, inducible, native promoter",
-                        "mode": "NULLABLE"
-                    }
-                ]
-            },
-            {
-                "name": "exogenous_perturbation",
-                "type": "RECORD",
-                "description": "Exogenous perturbation details",
-                "mode": "NULLABLE",
-                "fields": [
-                    {
-                        "name": "library_generation_method",
-                        "type": "STRING",
-                        "description": "Method for exogenous library generation: oligo-directed mutagenic PCR, error-prone PCR.",
-                        "mode": "NULLABLE"
-                    },
-                    {
-                        "name": "library_delivery_method",
-                        "type": "STRING",
-                        "description": "The method used to deliver the library for the perturbation: lentivirus, electroporation, etc.",
-                        "mode": "NULLABLE"
-                    },
-                    {
-                        "name": "library_integration_state",
-                        "type": "STRING",
-                        "description": "The final genomic state of the library: native locus replacement, extra-local insertion, random integration, episomal, non-integrated plasmid, RNA",
-                        "mode": "NULLABLE"
-                    },
-                    {
-                        "name": "library_expression_control",
-                        "type": "STRING",
-                        "description": "Expression control mechanism: constitutive, inducible, native promoter",
                         "mode": "NULLABLE"
                     }
                 ]
